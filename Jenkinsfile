@@ -1,13 +1,16 @@
 pipeline {
    agent none
     stages {
-	stage('Non-Parallel Stage') {
+	stage('ejercicio') {
 	    agent {
-                        label "principal"
-                }
-        steps {
-                git '${git}'
-                }
-        }
+               label "principal"
+            }
+           steps {
+	      git '${git}'
+	   }
+	   steps {
+              bat 'mvn --version'
+	   }
+       }
     }
 }
