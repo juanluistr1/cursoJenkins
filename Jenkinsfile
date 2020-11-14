@@ -6,7 +6,7 @@ pipeline {
                         label "principal"
                 }
         steps {
-                echo 'prueba para ver si funciona cogiendo desde el archivo'
+                git '${git}'
                 }
         }
     }
