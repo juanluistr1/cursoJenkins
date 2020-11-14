@@ -5,7 +5,9 @@ pipeline {
 	    agent {
                label "principal"
             }
-           
+           steps {
+	      git '${git}'
+	   }
 	   steps {
               bat 'mvn --version'
 	   }
