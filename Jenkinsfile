@@ -9,7 +9,7 @@ pipeline {
 	      git '${git}'
 	   }
 	   steps {
-              bat 'mvn --version'
+              bat 'java -version'
 	   }
        }
     }
