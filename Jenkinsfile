@@ -11,10 +11,16 @@ pipeline {
             }
 	    steps {
 	        git '${git}'
-			bat 'mvn --version'
-            bat 'java -version'
-		    bat 'mvn pmd:pmd checkstyle:checkstyle package'
         }
-     }  
+     }
+		stage('ejercicio_mavem') {
+ 	    agent {
+               label "principal"
+            }
+	    steps {
+                bat 'mvn --version'
+                bat 'java -version'
+            }
+         }  	 
     }
 }
