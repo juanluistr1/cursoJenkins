@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent none
    tools {
         maven 'LocalMaven' 
         jdk 'LocalJDK8'
