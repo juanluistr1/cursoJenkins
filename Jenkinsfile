@@ -27,6 +27,7 @@ pipeline {
                label "principal"
             }
 	        steps {
+		   git '${git}'
 	            bat 'mvn pmd:pmd checkstyle:checkstyle package'
             }
          }		 
