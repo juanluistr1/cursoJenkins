@@ -13,6 +13,7 @@ pipeline {
 	        git '${git}'
 			bat 'mvn --version'
             bat 'java -version'
+		    bat 'mvn pmd:pmd checkstyle:checkstyle package'
         }
      }  
     }
