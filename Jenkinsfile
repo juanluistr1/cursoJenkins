@@ -21,6 +21,19 @@ pipeline {
                 bat 'mvn --version'
                 bat 'java -version'
             }
-         }  	 
+         }
+	 stage('ejercicio_stop_pmd_check') {
+	   agent {
+               label "principal"
+            }
+           input {
+                message "¿quieres que siga con el proceso?"
+                ok "si claro."
+                submitter "juan"
+            }
+	        steps {
+	            bat 'mvn pmd:pmd checkstyle:checkstyle package'
+            }
+         }		 
     }
 }
